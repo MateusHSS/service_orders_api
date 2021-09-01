@@ -1,7 +1,9 @@
 import Route from "@ioc:Adonis/Core/Route"
 
 export default function () {
-	Route.get("/users", "UsersController.index")
-	Route.get("/users/:id", "UsersController.show")
-	Route.post("/users", "UsersController.create")
+	Route.group(() => {
+		Route.get("/", "UsersController.index")
+		Route.get("/:id", "UsersController.show")
+		Route.post("/", "UsersController.create")
+	}).prefix("/users")
 }

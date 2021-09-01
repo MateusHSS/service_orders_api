@@ -4,7 +4,7 @@ import Phone from "App/Models/Phone"
 export default class PhonesController {
 	public async index({ response: res }: HttpContextContract) {
 		try {
-			const phones = Phone.all()
+			const phones = await Phone.all()
 
 			res.status(200).json(phones)
 		} catch (error) {
