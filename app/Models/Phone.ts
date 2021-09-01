@@ -21,6 +21,11 @@ export default class Phone extends BaseModel {
 	})
 	public number: string
 
+	@column({
+		columnName: "clientId",
+	})
+	public clientId: number
+
 	@column.dateTime({ autoCreate: true })
 	public createdAt: DateTime
 

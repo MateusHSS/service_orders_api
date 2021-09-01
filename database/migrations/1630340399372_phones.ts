@@ -9,6 +9,7 @@ export default class Phones extends BaseSchema {
 			table.string("ddi").notNullable().defaultTo("55")
 			table.string("ddd").notNullable()
 			table.string("number").notNullable()
+			table.integer("clientId").unsigned()
 
 			/**
 			 * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
