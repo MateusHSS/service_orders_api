@@ -21,6 +21,7 @@
 import Route from "@ioc:Adonis/Core/Route"
 import authentication from "./routes/authentication"
 import clients from "./routes/clients"
+import phones from "./routes/phones"
 import users from "./routes/users"
 
 Route.group(() => {
@@ -33,5 +34,6 @@ Route.group(() => {
 	Route.group(() => {
 		users()
 		clients()
+		phones()
 	}).middleware("auth")
 }).prefix("/api")
