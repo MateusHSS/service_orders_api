@@ -10,7 +10,13 @@ export default class Clients extends BaseSchema {
 			table.string("lastName").nullable()
 			table.string("documentNumber").unique()
 			table.string("email").unique().notNullable().index()
-			table.foreign("user_id").references("id").inTable("users").onDelete("SET NULL")
+			table
+				.integer("user_id")
+				.unsigned()
+				.references("id")
+				.inTable("users")
+				.onDelete("NO ACTION")
+				.onUpdate("CASCADE")
 
 			/**
 			 * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
